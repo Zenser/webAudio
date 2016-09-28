@@ -1,0 +1,26 @@
+{
+  "name": "web-audio",
+  "description": "音频播放器",
+  "main": "index.js",
+  "authors": [
+    "zhangshuai"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "audio",
+    "web",
+    "javascript"
+  ],
+  "homepage": "https://github.com/Zenser/webAudio",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "angular": "^1.5.8"
+  }
+}

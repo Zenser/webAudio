@@ -1,0 +1,32 @@
+{
+  "name": "web-audio",
+  "version": "1.0.0",
+  "description": "音频播放器",
+  "main": "index.js",
+  "dependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-ng-html2js": "^0.2.2",
+    "gulp-sass": "^2.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zenser/webAudio.git"
+  },
+  "keywords": [
+    "audio",
+    "web",
+    "javascript"
+  ],
+  "author": "zhangshuai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zenser/webAudio/issues"
+  },
+  "homepage": "https://github.com/Zenser/webAudio#readme"
+}
