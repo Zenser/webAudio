@@ -3,7 +3,7 @@ angular.module('ngAudio')
     .directive('ngAudio', ['$timeout', 'ngAudioService', function ($timeout, ngAudioService) {
         return {
             restrict: 'E',
-            templateUrl: 'ngAudioViewer.html',
+            templateUrl: 'ngAudio.html',
             scope: {
                 curIndex: '@'
             },
@@ -11,7 +11,8 @@ angular.module('ngAudio')
                 function refresh() {
                     scope.audios = ngAudioService.getAudios();
                     scope.curIndex = ngAudioService.getCurIndex();
-                    audio[0].src = scope.audios[scope.curIndex].ossUrl;
+                    audio[0].src = scope.audios[scope.curIndex].src;
+                    element.find('.ng-audio-container').show(100);
                     setVolumeStyle();//改变音量部分显示样式
                 }
 
@@ -171,8 +172,8 @@ angular.module('ngAudio')
 
                 //列表模式
                 scope.resizeFull = function () {
-                    $('.ky-audio-container').css('width', '580px');
-                    $('.ky-audio-min-container').hide(100);
+                    $('.ng-audio-container').css('width', '580px');
+                    $('.ng-audio-min-container').hide(100);
                     $('.dialog-header').show(100);
                     $('.dialog-body').show(100);
 
@@ -182,8 +183,8 @@ angular.module('ngAudio')
                 scope.resizeSmall = function () {
                     $('.dialog-header').hide(100);
                     $('.dialog-body').hide(100);
-                    $('.ky-audio-container').css('width', '300px');
-                    $('.ky-audio-min-container').show(100);
+                    $('.ng-audio-container').css('width', '300px');
+                    $('.ng-audio-min-container').show(100);
                 };
 
                 //点击列表切换音频

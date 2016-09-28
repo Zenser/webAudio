@@ -10,7 +10,9 @@
     "gulp-ng-html2js": "^0.2.2",
     "gulp-sass": "^2.3.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.16.0"
+  },
   "scripts": {
     "test": "gulp test"
   },

@@ -1,0 +1,83 @@
+<div class="ng-audio-container">
+    <audio src="" preload></audio>
+    <div class="dialog-header">
+        <h3>
+            {{audios[curIndex].name}}
+        </h3>
+        <span class="glyphicon glyphicon-resize-small" ng-click="resizeSmall()" title="mini模式"></span>
+
+        <div class="destroy-btn" onclick="$('.ng-audio-container').hide(100);$('audio')[0].pause();" title="关闭"></div>
+    </div>
+
+    <div class="ng-audio-min-container">
+        <h3 class="marquee">
+            <div>
+                {{audios[curIndex].name}}
+            </div>
+        </h3>
+        <span class="glyphicon glyphicon-resize-full" ng-click="resizeFull()" title="完整模式"></span>
+
+        <div class="destroy-btn" onclick="$('.ng-audio-container').hide(100);$('audio')[0].pause();" title="关闭"></div>
+    </div>
+
+    <div class="dialog-body">
+        <div class="control">
+            <div class="head-control">
+                <span class="glyphicon glyphicon-step-backward" ng-click="goPrevious()"></span>
+                <span class="glyphicon play-pause"
+                      ng-class="{pause:'glyphicon-pause',play:'glyphicon-play'}[playState]"
+                      ng-click="playOrPause()"></span>
+                <span class="glyphicon glyphicon-step-forward" ng-click="goNext()"></span>
+
+                <div class="volume">
+                    <!--音频状态-->
+                    <span class="glyphicon"
+                          ng-class="{up:'glyphicon-volume-up',down:'glyphicon-volume-down',off:'glyphicon-volume-off'}[volumeState]"
+                          ng-click="mutedChange()">
+
+                    </span>
+
+                    <div id="volumeBar" class="progress" ng-click="changeVolume()">
+                        <div id="volumeProgress" class="progress-bar">
+                            <div class="sr-only"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--进度条区域-->
+            <div class="progress-area">
+                <h3 class="marquee" ng-if="canPlay">
+                    <div>
+                        {{audios[curIndex].name}}
+                    </div>
+                </h3>
+                <h3 ng-if="!canPlay">加载中...</h3>
+
+                <div id="audioBar" class="progress" ng-click="updatePlayTime()">
+                    <!--进度条-->
+                    <div id="audioPlayBar"
+                         class="progress-bar progress-bar-success progress-bar-striped progress-play">
+                        <div class="sr-only"></div>
+                    </div>
+                    <!--缓冲条-->
+                    <div id="loadingBar" class="progress-bar progress-bar-info progress-loading">
+                    </div>
+                </div>
+            </div>
+
+            <div class="play-mode">
+                {{timeShow.currentTime}}/{{timeShow.duration}}
+            </div>
+        </div>
+
+        <div class="title">音频列表</div>
+        <div class="content">
+            <div class="list-group audio-list">
+                <div class="list-group-item" ng-class="{active:item.isActive}"
+                     ng-repeat="item in audios track by $index" ng-click="changeAudioList($index)">
+                    {{item.name}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

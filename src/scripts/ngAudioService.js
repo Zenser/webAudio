@@ -6,7 +6,7 @@ angular.module('ngAudio')
 
         function checkSame(audio) {
             for (var i = 0, len = audios.length; i < len; i++) {
-                if (audios[i].nodeId === audio.nodeId) { //找到列表中已存在音频索引
+                if (audios[i].src === audio.src) { //找到列表中已存在音频索引
                     return i;
                 }
             }
