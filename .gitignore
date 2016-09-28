@@ -1,0 +1,5 @@
+node_module/
+bower_components/
+.tmp/
+dist/
+.idea/
